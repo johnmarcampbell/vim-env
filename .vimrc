@@ -64,6 +64,21 @@ set showmatch
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 
+colorscheme monokai 
+syntax on
+" If there is a false on GUI returned, then load the terminal scheme {
+    if has("gui_running")
+    
+        set guioptions-=m       " remove menu bar
+        set guioptions-=T       " remove toolbar
+        set guioptions-=r       " remove right-hand scroll bar
+        set guioptions-=L       " remove left-hand scroll bar
+        set guioptions=c
+
+		set noerrorbells		" unset alarm bell
+		set vb					" unset alarm bell
+		set t_vb="."			" unset alarm bell
+    endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
