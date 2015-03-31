@@ -2,7 +2,6 @@
 " Sections:                                                                  "
 "   01. General ................. General Vim behavior                       "
 "   02. Vim UI .................. User interface behavior                    "
-"   03. Text Formatting/Layout .. Text, tab, indentation related             "
 "   04. Custom Commands ......... Any custom command aliases                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -18,17 +17,19 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-set nocompatible "Disable compatibility with vi
 let mapleader=","
 
+source ~/.vim/pluginsettings.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Use 'jk' to leave interactive mode
+"Mash 'jk' to leave interactive mode
 inoremap jk <ESC>
+inoremap kj <ESC>
 
 set nu "Show line numbers
+set hidden
 
 "Split stuff
 nnoremap <C-j> <C-w><C-J>
@@ -96,5 +97,7 @@ set smartindent
 
 "Open current file in new vertical split and switch to it
 nnoremap <leader>w <C-w>v<C-w>l
-"Toggle NERDTree
-nnoremap <leader>N :NERDTreeToggle <cr>
+"Edit vimrc
+nnoremap <leader>v :e ~/.vimrc <cr>
+"Source vimrc
+nnoremap <leader>sv :source ~/.vimrc <cr>
