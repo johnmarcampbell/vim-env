@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:                                                                  "
 "   01. General ................. General Vim behavior                       "
 "   02. Vim UI .................. User interface behavior                    "
@@ -20,6 +20,7 @@ execute pathogen#infect()
 let mapleader=","
 
 source ~/.vim/pluginsettings.vim
+source ~/.vim/autocmds.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,8 +29,9 @@ source ~/.vim/pluginsettings.vim
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-set nu "Show line numbers
+set nu rnu "Show relative line numbers
 set hidden
+filetype on 
 
 "Split stuff
 nnoremap <C-j> <C-w><C-J>
@@ -48,6 +50,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
 
 "Fix regex handling
 nnoremap / /\v
@@ -89,15 +95,19 @@ set tabstop=4 "Length of a tab
 set shiftwidth=4 "Auto-indent length
 set softtabstop=4 "Spaces when you hit tab key
 set smartindent
-"set expandtab "Change tabs to spaces
+set expandtab "Change tabs to spaces
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Custom Commands                                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"Write buffer
+nnoremap <leader>w :w <cr>
 "Open current file in new vertical split and switch to it
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>sv <C-w>v<C-w>l
+"Open current file in new horizontal split and switch to it
+nnoremap <leader>sh <C-w>s<C-w>l
 "Edit vimrc
-nnoremap <leader>v :e ~/.vimrc <cr>
+nnoremap <leader>v :vsplit $MYVIMRC <cr>
 "Source vimrc
-nnoremap <leader>sv :source ~/.vimrc <cr>
+nnoremap <leader>so :source $MYVIMRC <cr>
