@@ -9,6 +9,11 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Check for local vim settings
+if !empty(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
+
 "Start Pathogen, for managing plug-ins
 "Install new plug-ins with: 
 "	cd ~/.vim/bundle && \
@@ -21,6 +26,7 @@ let mapleader=","
 
 source ~/.vim/pluginsettings.vim
 source ~/.vim/autocmds.vim
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -33,6 +39,8 @@ set nu rnu "Show relative line numbers
 set hidden
 filetype on 
 
+set backspace=eol,start,indent "Proper backspace behavior
+
 "Split stuff
 nnoremap <C-j> <C-w><C-J>
 nnoremap <C-k> <C-w><C-K>
@@ -40,6 +48,11 @@ nnoremap <C-l> <C-w><C-L>
 nnoremap <C-h> <C-w><C-H>
 set splitbelow
 set splitright
+
+"Tab Stuff
+nnoremap ,, :tabnew <CR>
+nnoremap ,. :tabnext <CR>
+nnoremap ., :tabprev <CR>
 
 "Turns off arrow keys, to enforce using hjkl
 nnoremap <up> <nop>

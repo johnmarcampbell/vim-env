@@ -10,3 +10,4 @@ nnoremap <leader>b :Unite buffer <cr>
 "Fugitive
 nnoremap <leader>gs :Gstatus <cr>
 nnoremap <leader>gc :Gcommit <cr>
+nnoremap <leader>gd :Gdiff <cr>
