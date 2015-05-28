@@ -40,6 +40,7 @@ set hidden
 filetype on 
 
 set backspace=eol,start,indent "Proper backspace behavior
+set clipboard=unnamedplus "Use system clipboard
 
 "Split stuff
 nnoremap <C-j> <C-w><C-J>
@@ -51,8 +52,8 @@ set splitright
 
 "Tab Stuff
 nnoremap ,, :tabnew <CR>
-nnoremap ,. :tabnext <CR>
-nnoremap ., :tabprev <CR>
+nnoremap <> :tabnext <CR>
+nnoremap >< :tabprev <CR>
 
 "Turns off arrow keys, to enforce using hjkl
 nnoremap <up> <nop>
