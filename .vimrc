@@ -56,10 +56,10 @@ nnoremap <> :tabnext <CR>
 nnoremap >< :tabprev <CR>
 
 "Turns off arrow keys, to enforce using hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <up> :tabnew <CR> :ls <cr>
+nnoremap <down> :tabclose <cr>
+nnoremap <left> :tabprev <CR>
+nnoremap <right> :tabnext <CR>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -117,6 +117,8 @@ set expandtab "Change tabs to spaces
 
 "Write buffer
 nnoremap <leader>w :w <cr>
+"Write buffer and quit
+nnoremap <leader>qw :wq <cr>
 "Open current file in new vertical split and switch to it
 nnoremap <leader>sv <C-w>v<C-w>l
 "Open current file in new horizontal split and switch to it
@@ -125,3 +127,5 @@ nnoremap <leader>sh <C-w>s<C-w>l
 nnoremap <leader>v :vsplit $MYVIMRC <cr>
 "Source vimrc
 nnoremap <leader>so :source $MYVIMRC <cr>
+"Display buffer list and prepare to switch
+nnoremap <space> :ls <cr>
