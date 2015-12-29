@@ -9,3 +9,6 @@ autocmd FileType sh vnoremap <buffer> <leader>cb <esc>:'<,'>s/^/#<cr> :noh<cr>
 autocmd FileType vim vnoremap <buffer> <leader>cb <esc>:'<,'>s/^/"<cr> :noh<cr>
 autocmd FileType cpp vnoremap <buffer> <leader>cb <esc>`<O/*<esc>`>o*/<esc>
 autocmd FileType xml vnoremap <buffer> <leader>cb <esc>`<0O<!--<esc>`>0o--><esc>
+
+"Latex commands
+autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ xdg-open\ %:r.pdf

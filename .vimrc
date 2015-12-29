@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:                                                                  "
 "   01. General ................. General Vim behavior                       "
 "   02. Vim UI .................. User interface behavior                    "
@@ -50,11 +50,6 @@ nnoremap <C-h> <C-w><C-H>
 set splitbelow
 set splitright
 
-"Tab Stuff
-nnoremap ,, :tabnew <CR>
-nnoremap <> :tabnext <CR>
-nnoremap >< :tabprev <CR>
-
 "Turns off arrow keys, to enforce using hjkl
 nnoremap <up> :tabnew <CR> :ls <cr>
 nnoremap <down> :tabclose <cr>
@@ -83,23 +78,22 @@ set gdefault "make replaces global by default
 set incsearch
 set showmatch
 set hlsearch
+"Un-hilight with <leader><space>
 nnoremap <leader><space> :noh<cr>
 
 colorscheme monokai 
 syntax on
-" If there is a false on GUI returned, then load the terminal scheme {
-    if has("gui_running")
-    
-        set guioptions-=m       " remove menu bar
-        set guioptions-=T       " remove toolbar
-        set guioptions-=r       " remove right-hand scroll bar
-        set guioptions-=L       " remove left-hand scroll bar
-        set guioptions=c
 
-		set noerrorbells		" unset alarm bell
-		set vb					" unset alarm bell
-		set t_vb="."			" unset alarm bell
-    endif
+"Always display the status line
+set laststatus=2
+
+"Disable the mouse, except for the scroll wheel
+set mouse=a
+nnoremap <ScrollWheelUp> 3<C-y>
+nnoremap <ScrollWheelDown> 3<C-e>
+nnoremap <LeftMouse> <nop>
+inoremap <LeftMouse> <nop>
+noremap <LeftMouse> <nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -129,3 +123,6 @@ nnoremap <leader>v :vsplit $MYVIMRC <cr>
 nnoremap <leader>so :source $MYVIMRC <cr>
 "Display buffer list and prepare to switch
 nnoremap <space> :ls <cr>
+
+"rot13 the file
+noremap <Leader>r mzggg?G`m
