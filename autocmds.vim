@@ -1,14 +1,13 @@
-"Line-wise commenting for various file types
-autocmd FileType sh nnoremap <buffer> <leader>cl 0i#<esc>
-autocmd FileType vim nnoremap <buffer> <leader>cl 0i"<esc>
-autocmd FileType cpp nnoremap <buffer> <leader>cl 0i//<esc>
-autocmd FileType xml nnoremap <buffer> <leader>cl 0i<!-- <esc>$a --> <esc>
-
-"Block commenting for various file types
-autocmd FileType sh vnoremap <buffer> <leader>cb <esc>:'<,'>s/^/#<cr> :noh<cr>
-autocmd FileType vim vnoremap <buffer> <leader>cb <esc>:'<,'>s/^/"<cr> :noh<cr>
-autocmd FileType cpp vnoremap <buffer> <leader>cb <esc>`<O/*<esc>`>o*/<esc>
-autocmd FileType xml vnoremap <buffer> <leader>cb <esc>`<0O<!--<esc>`>0o--><esc>
-
-"Latex commands
+" Latex commands
 autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ xdg-open\ %:r.pdf
+
+" Add two spaces to the end of lines in Markdown files
+au BufWrite *.md %s/\(\S\)\n/\1  \r/e | norm!``
+
+" Comment strings
+autocmd FileType python setlocal commentstring=#\ %s
+autocmd FileType sh setlocal commentstring=#\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType xml setlocal commentstring=<!--\ %s\ -->
+autocmd FileType vim setlocal commentstring=\"\ %s
+

@@ -11,3 +11,7 @@ nnoremap <leader>b :Unite buffer <cr>
 nnoremap <leader>gs :Gstatus <cr>
 nnoremap <leader>gc :Gcommit <cr>
 nnoremap <leader>gd :Gdiff <cr>
+
+"UltiSnips
+let g:UltiSnipsSnippetDirectories=["bundle/ultisnips"]
+nnoremap <leader>ue :UltiSnipsEdit <cr>
