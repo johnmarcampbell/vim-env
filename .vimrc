@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:                                                                  "
 "   01. General ................. General Vim behavior                       "
 "   02. Vim UI .................. User interface behavior                    "
@@ -33,7 +33,6 @@ source ~/.vim/autocmds.vim
 
 "Mash 'jk' to leave interactive mode
 inoremap jk <ESC>
-inoremap kj <ESC>
 
 set nu rnu "Show relative line numbers
 set hidden
@@ -78,8 +77,6 @@ set gdefault "make replaces global by default
 set incsearch
 set showmatch
 set hlsearch
-"Un-hilight with <leader><space>
-nnoremap <leader><space> :noh<cr>
 
 colorscheme monokai 
 syntax on
@@ -94,6 +91,10 @@ nnoremap <ScrollWheelDown> 3<C-e>
 nnoremap <LeftMouse> <nop>
 inoremap <LeftMouse> <nop>
 noremap <LeftMouse> <nop>
+
+"Make vim source my .bashrc
+"set shell=/bin/bash\ --rcfile\ ~/.bashrc
+set shell=/bin/bash\ -i
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,6 +114,8 @@ set expandtab "Change tabs to spaces
 nnoremap <leader>w :w <cr>
 "Write buffer and quit
 nnoremap <leader>qw :wq <cr>
+"No, really quit!
+nnoremap <leader>qq :q! <cr>
 "Open current file in new vertical split and switch to it
 nnoremap <leader>sv <C-w>v<C-w>l
 "Open current file in new horizontal split and switch to it
@@ -123,6 +126,12 @@ nnoremap <leader>v :vsplit $MYVIMRC <cr>
 nnoremap <leader>so :source $MYVIMRC <cr>
 "Display buffer list and prepare to switch
 nnoremap <space> :ls <cr>
+"Un-hilight search results
+nnoremap <leader>n :noh <cr>
 
 "rot13 the file
 noremap <Leader>r mzggg?G`m
+
+"Insert date/time
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
