@@ -13,5 +13,5 @@ nnoremap <leader>gc :Gcommit <cr>
 nnoremap <leader>gd :Gdiff <cr>
 
 "UltiSnips
-let g:UltiSnipsSnippetDirectories=["bundle/ultisnips"]
+let g:UltiSnipsSnippetDirectories=["~/.vim/bundle/ultisnips"]
 nnoremap <leader>ue :UltiSnipsEdit <cr>
