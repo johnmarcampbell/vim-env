@@ -37,6 +37,7 @@ inoremap jk <ESC>
 set nu rnu "Show relative line numbers
 set hidden
 filetype on 
+filetype plugin on 
 
 set backspace=eol,start,indent "Proper backspace behavior
 set clipboard=unnamedplus "Use system clipboard
