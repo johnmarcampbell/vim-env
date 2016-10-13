@@ -68,6 +68,10 @@ vnoremap <right> <nop>
 nnoremap / /\v
 vnoremap / /\v
 
+"Switch colon and semi-colon
+nnoremap ; :
+nnoremap : ;
+
 "Ignores case unless search string is mixed case
 set ignorecase
 set smartcase
@@ -79,7 +83,7 @@ set incsearch
 set showmatch
 set hlsearch
 
-colorscheme monokai 
+colorscheme despacio 
 syntax on
 
 "Always display the status line
@@ -122,7 +126,7 @@ nnoremap <leader>sv <C-w>v<C-w>l
 "Open current file in new horizontal split and switch to it
 nnoremap <leader>sh <C-w>s<C-w>l
 "Edit vimrc
-nnoremap <leader>v :vsplit $MYVIMRC <cr>
+nnoremap <leader>v :e $MYVIMRC <cr>
 "Source vimrc
 nnoremap <leader>so :source $MYVIMRC <cr>
 "Display buffer list and prepare to switch
@@ -132,6 +136,8 @@ nnoremap <leader>n :noh <cr>
 
 "rot13 the file
 noremap <Leader>r mzggg?G`m
+"Make
+nnoremap <Leader>m :make<cr>
 
 "Insert date/time
 nnoremap <F5> "=strftime("%c")<CR>P
