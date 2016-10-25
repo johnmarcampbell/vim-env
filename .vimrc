@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:                                                                  "
 "   01. General ................. General Vim behavior                       "
 "   02. Vim UI .................. User interface behavior                    "
@@ -26,6 +26,9 @@ let mapleader=","
 
 source ~/.vim/pluginsettings.vim
 source ~/.vim/autocmds.vim
+
+" Add all subdirectories of current directory to path
+set path+=**
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Vim UI                                                                 "
