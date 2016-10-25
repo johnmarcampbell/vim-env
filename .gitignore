@@ -1,2 +1,5 @@
 # netrwhist file 
 .netrwhist
+
+#vim swap files
+*.swp
