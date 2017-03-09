@@ -100,9 +100,6 @@ nnoremap <LeftMouse> <nop>
 inoremap <LeftMouse> <nop>
 noremap <LeftMouse> <nop>
 
-"Make vim source my .bashrc
-"set shell=/bin/bash\ --rcfile\ ~/.bashrc
-set shell=/bin/bash\ -i
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
